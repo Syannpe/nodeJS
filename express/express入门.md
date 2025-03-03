@@ -32,16 +32,16 @@ mkdir express-demo && cd express-demo
 创建`server.js`，并添加如下代码：
 
 ```js
-const http = require('http')
+const http = require('http/1 基础服务器')
 
 const server = http.createServer((req, res) => {
-  res.statusCode = 200
-  res.setHeader('Content-Type', 'text/html')
-  res.end('hello world')
+    res.statusCode = 200
+    res.setHeader('Content-Type', 'text/html')
+    res.end('hello world')
 })
 
 server.listen(3000, () => {
-  console.log('服务已启动...');
+    console.log('服务已启动...');
 })
 ```
 
