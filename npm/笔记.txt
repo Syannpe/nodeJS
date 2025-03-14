@@ -1,0 +1,27 @@
+--后缀相关--
+如果要在npm 上安装只在开发的时候用的包的话需要在npm install xxx后加上-D后缀
+这种包被称之为开发依赖包
+全称为--save-dev
+
+如果要将一个包安装到全局则加-g后缀
+全局包一般安装在C:\User\XXX\AppData\Roaming\npm\node_modules
+
+--镜像源--
+查看当前下包的镜像源
+npm config get registry
+
+更换镜像源
+npm config set registry=https://xxx.com
+
+想要快速切换镜像源可以安装nrm包，常用指令为:
+nrm ls 查看所有可用镜像源
+nrm use xxx 切换为xxx服务器
+
+--发布自定义包--
+package.json注意事项：
+main字段指定了入口文件，也就是如果用户使用require()方法对包进行调用的话会引入哪个文件
+license是开源许可协议，默认ISC
+
+--第三方包介绍--
+i5ting_toc：用于将md文档转化为html页面
+i5ting_toc -f 转换md文件路径 -o
