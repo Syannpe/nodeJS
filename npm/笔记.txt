@@ -6,6 +6,9 @@
 如果要将一个包安装到全局则加-g后缀
 全局包一般安装在C:\User\XXX\AppData\Roaming\npm\node_modules
 
+--关于npm账号--
+登录 npm login，之后根据提示信息完成填写，注意此处要把服务器切换为npm官方服务器
+
 --镜像源--
 查看当前下包的镜像源
 npm config get registry
@@ -21,6 +24,8 @@ nrm use xxx 切换为xxx服务器
 package.json注意事项：
 main字段指定了入口文件，也就是如果用户使用require()方法对包进行调用的话会引入哪个文件
 license是开源许可协议，默认ISC
+npm publish 发布包。注意应该先查重
+npm unpublish 包名 --force 删除发布包。注意：此指令只可以删除72小时以内发布的包，并且删除后24小时不允许重复发布
 
 --第三方包介绍--
 i5ting_toc：用于将md文档转化为html页面
