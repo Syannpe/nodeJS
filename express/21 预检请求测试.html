@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../libs/default-stylesheet.css" />
+</head>
+<body>
+<p>CORS由一系列HTTP响应头组成，这些HTTP
+响应头决定浏览器是否阻止前端JS代码跨域获取资源
+    这些CORS只需在服务器端设置，浏览器端只需要设置请求头即可
+</p>
+<button id="get">get</button>
+<button id="post">post</button>
+<button id="delete">delete</button>
+<script type="module">
+    document.addEventListener("DOMContentLoaded", function () {
+        const get = document.getElementById("get");
+        const post = document.getElementById("post");
+        const deleteButton = document.getElementById("delete");
+
+        post.addEventListener("click", function () {
+            fetch("http://localhost/api/post", {
+                method: "POST",
+                mode: "cors",
+                body: JSON.stringify({
+                    name: "zs",
+                    age: 20
+                }),
+            })
+                .then(res => res.text())
+                .then(res => console.log(res))
+        });
+        get.addEventListener("click", function () {
+            fetch("http://localhost/api/get?name=zs&age:20", {
+                method: "GET",
+                mode: "cors",
+            })
+                .then(res => res.text())
+                .then(res => console.log(res))
+        });
+
+        deleteButton.addEventListener("click", function () {
+            fetch("http://localhost/api/delete", {
+                method: "DELETE",
+                mode: "cors",
+            })
+                .then(res => res.text())
+                .then(res => console.log(res))
+        })
+    });
+</script>
+</body>
+</html>

@@ -8,7 +8,7 @@ router.get("/get", (req, res) => {
 
     res.send({
         status: 0,  // 0 表示成功, 1 表示失败
-        msg: "获取用户列表成功",    // 状态的描述
+        msg: "get请求成功",    // 状态的描述
         data: query // 需要响应给客户端的数据
     })
 });
@@ -20,7 +20,7 @@ router.post("/post", (req, res) => {
 
     res.send({
         status: 0,  // 0 表示成功, 1 表示失败
-        msg: "创建用户成功",    // 状态的描述
+        msg: "post请求成功",    // 状态的描述
         data: body // 需要响应给客户端的数据
     })
 });
